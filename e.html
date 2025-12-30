@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apology letter</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #E1DF28 0%, #DDEA32 100%);
+               display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .envelope {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            background: #f39c12;
+            border-radius: 10px 10px 0 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.5s;
+        }
+        .envelope::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: #e67e22;
+            border-radius: 10px 10px 0 0;
+            transform-origin: top;
+            transition: transform 0.5s;
+        }
+        .envelope.open::before {
+            transform: rotateX(180deg);
+        }
+        .paper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 250px;
+            height: 300px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            overflow-y: auto;
+            transition: transform 0.5s;
+            z-index: 10;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #333;
+        }
+        .paper.open {
+            transform: translate(-50%, -50%) scale(1) rotateY(10deg);
+        }
+        .buttons {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        .close-btn {
+            display:none;
+        }
+        .  }
+        
+        .paper.open + .buttons .close-btn {
+            display: block;
+        }
+        .paper.open + .buttons .open-btn {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="envelope" id="envelope">
+        <div class="paper" id="paper">
+            <p>Hi Tal sorry sa istorbo hehe, i just want to apologize for the pain I've caused you and mag-explain sa lahat ng ginawa ko.</p>
+            <p>totoo lahat ng sinabi ko sayo nung time na yun akala ko kasi ayun yung makakabuti or mas malalampasan ko yung problem ko ng ako lang mag-isa (hindi pala haha), gusto ko rin i-clarify na hindi ako nagcheat sayo and wala akong ibang kinausap nung time na yun, totoong nag usap kami ng ex ko after natin pero hindi kami nagkabalikan and hindi ko siya kinausap nung nag-uusap pa tayo,  hindi ko sinasabi sayo lahat to kasi ko mag-usap tayo ulit (ayoko na nga guluhin ka haha) gusto ko lang malaman mo lahat and makapag sorry sayo.</p
+            <p>sorry sa lahat ng nagawa ko sayo tal,i know i made a huge mistake but i hope you can forgive me for all mistakes I've done, hindi mo man ako mapatad basta basta pero sana one day mapatawad mo ako.</p>
+           
+            <p>Advance Happy New Year Tal, I hope your 2026 be filled with happiness and blessings.</p>
+            <p>From:<br>Sleepyhead</p>
+        </div>
+        <div class="buttons">
+            <button class="open-btn" id="openBtn">Open Envelope</button>
+            <button class="close-btn" id="closeBtn">Close</button>
+        </div>
+    </div>
+
+    <script>
+        const envelope = document.getElementById('envelope');
+        const paper = document.getElementById('paper');
+        const openBtn = document.getElementById('openBtn');
+        const closeBtn = document.getElementById('closeBtn');
+
+        openBtn.addEventListener('click', () => {
+            envelope.classList.add('open');
+            paper.classList.add('open');
+        });
+
+        closeButton.addEventListener('click', () => {
+            paper.classList.remove('show');
+            overlay.classList.remove('show');
+            setTimeout(() => {
+                envelope.classList.remove('open');
+            }, 500);
+        });
+
+    
+        envelope.addEventListener('click', (e) => {
+            if (e.target === envelope || e.target === openBtn) {
+                envelope.classList.add('open');
+                paper.classList.add('open');
+            }
+        });
+    </script>
+</body>
+</html>
